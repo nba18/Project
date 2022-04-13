@@ -3,8 +3,8 @@ const config = {
         port: process.env.PORT || 8080,
     },
     DB: {
-        url: process.env.url || "",
+        uri: process.env.MONGODB_URI || "mongodb+srv://nba18:binhan2001@cluster0.6lfn3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     }
 };
 
-module.exports = config;
+module.exports = config
