@@ -2,7 +2,7 @@ const res = require("express/lib/response");
 const mongoose = require("mongoose");
 const sha256 = require("sha256")
 
-const config = require("../config")
+const config = require("../config").default
 const Product = require("../models/product.model")
 const User = require("../models/user.model")
 
@@ -18,6 +18,7 @@ const userController = {
             const newUser = User({
                 username: req.body.username,
                 password: hashed,
+                
             })
             const user = await newUser.save()
             if(!user){

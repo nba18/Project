@@ -16,13 +16,10 @@ const usershema = mongoose.Schema(
         //Họ và tên
         HoTen: {
             type: String,
-            required: true,
         },
         //Địa chỉ mail
         email: {
             type: String,
-            lowercase: true,
-            required: true,
         },
         //Địa chỉ
         address: String,
