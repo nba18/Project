@@ -18,13 +18,12 @@ const userController = {
             const newUser = User({
                 username: req.body.username,
                 password: hashed,
-                
             })
             const user = await newUser.save()
             if(!user){
                 return res.status(404).json("Đăng kí không thành công !")
             }
-            return res.status(200).json("Đăng kí thành công",user)
+            return res.status(200).json(user)
         }
     },
     //Đăng nhập
@@ -54,7 +53,7 @@ const userController = {
         }
         return res.status(200).json(product)
     },
-    //Tìm một sản phẩm theo tên
+    //Tìm một sản phẩm theo id
     viewDetail: async(req, res) => {
         const product = await Product.findOne({id: req.params})
         if(!product){

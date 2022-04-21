@@ -14,7 +14,7 @@ const usershema = mongoose.Schema(
             required: true,
         },
         //Họ và tên
-        HoTen: {
+        hoten: {
             type: String,
         },
         //Địa chỉ mail
